@@ -10,7 +10,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 //import io.github.cdimascio.dotenv.Dotenv;
 
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+@SpringBootApplication
 public class EcartApplication {
 	
 	public static void main(String[] args) {
@@ -29,8 +29,6 @@ public class EcartApplication {
 		{
 			System.setProperty("DB_PASS", dotenv.get("DB_PASS"));
 		}
-		
-		
 		
 		SpringApplication.run(EcartApplication.class, args);
 	}
