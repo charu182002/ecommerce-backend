@@ -30,22 +30,28 @@ public class AuthController {
     public String register(@RequestBody AuthEntity user) {
         user.setPassword(
             passwordEncoder.encode(user.getPassword()));
-        user.setRole("USER");
+        if (user.getRole() == null || user.getRole().isBlank()) {
+            user.setRole("USER");
+        }
         authRepository.save(user);
         return "User registered successfully!";
     }
 
     @PostMapping("/login")
     public String login(@RequestBody AuthEntity user) {
+
         var dbUser = authRepository.findByUsername(user.getUsername())
                 .orElse(null);
-        
-        if(dbUser == null) {
+
+        if (dbUser == null) {
             return "User not found!";
         }
-        
-        if(passwordEncoder.matches(user.getPassword(), dbUser.getPassword())) {
-            return jwtUtil.generateToken(dbUser.getUsername());
+
+        if (passwordEncoder.matches(user.getPassword(), dbUser.getPassword())) {
+            return jwtUtil.generateToken(
+                    dbUser.getUsername(),
+                    dbUser.getRole()
+            );
         } else {
             return "Invalid password!";
         }

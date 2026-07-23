@@ -36,5 +36,4 @@ public class OrderController {
 		Order order = orderService.getOrder(orderNo);
 		return ResponseEntity.ok().body(order);
 	}
-	
 }
