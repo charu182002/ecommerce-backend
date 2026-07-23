@@ -158,8 +158,8 @@ Logs Order Created Event
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/<your-github-username>/ecart.git
-cd ecart
+git clone https://github.com/charu182002/ecommerce-backend
+cd ecommerce-backend
 ```
 
 ---
