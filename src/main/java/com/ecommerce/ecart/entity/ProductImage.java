@@ -15,8 +15,6 @@ public class ProductImage {
       private Long id;
       private String publicId;
       private String url;
-      
-      
      
       
 	public Long getId() {

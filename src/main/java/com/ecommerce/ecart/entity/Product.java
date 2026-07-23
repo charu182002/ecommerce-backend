@@ -3,12 +3,15 @@ package com.ecommerce.ecart.entity;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import jakarta.persistence.Table;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
@@ -16,6 +19,14 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
+@Table(name = "product" ,
+indexes = {
+        @Index(name="idx_category", columnList="category"),
+        @Index(name="idx_price", columnList="price"),
+        @Index(name="idx_name", columnList="name"),
+        @Index(name="idx_ratings", columnList="ratings")
+    }
+)
 public class Product {
 	
 	@Id
