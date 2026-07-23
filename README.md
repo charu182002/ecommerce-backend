@@ -260,17 +260,6 @@ Authorization: Bearer <JWT_TOKEN>
 
 ---
 
-## Future Enhancements
-
-- Payment Gateway Integration
-- Email Notifications
-- Inventory Management
-- Redis Caching
-- Unit & Integration Testing
-- CI/CD Pipeline using GitHub Actions
-
----
-
 ## Author
 
 **Charumathi P**
