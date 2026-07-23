@@ -126,16 +126,16 @@ src
 Create Order
      │
      ▼
-Save Order
+Save Order in MySQL
      │
      ▼
 Publish Event to Kafka
      │
      ▼
-Kafka Consumer
+Kafka Consumer Receives Event
      │
      ▼
-Process Order Event
+Logs Order Created Message
 ```
 
 ---
@@ -155,16 +155,32 @@ Process Order Event
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/charu182002/ecommerce-backend
+git clone https://github.com/charu182002/ecommerce-backend.git
 cd ecommerce-backend
 ```
 
 ---
 
-### Start Docker Services
+## Docker
+
+The project includes Docker and Docker Compose configuration to run the Spring Boot application and its required services.
+
+### Start all Services
 
 ```bash
 docker-compose up -d
+```
+
+### Build Docker Image
+
+```bash
+docker build -t ecart .
+```
+
+### Run Docker Container
+
+```bash
+docker run -p 8080:8080 ecart
 ```
 
 ---
@@ -225,22 +241,6 @@ Authorization: Bearer <JWT_TOKEN>
 
 ---
 
-## Docker
-
-Build Docker image
-
-```bash
-docker build -t ecart .
-```
-
-Run Docker container
-
-```bash
-docker run -p 8080:8080 ecart
-```
-
----
-
 ## Technologies Demonstrated
 
 - RESTful API Development
@@ -256,6 +256,7 @@ docker run -p 8080:8080 ecart
 - Apache Kafka Messaging
 - Docker
 - Swagger/OpenAPI
+- MySQL Integration
 
 ---
 
