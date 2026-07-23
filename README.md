@@ -120,25 +120,22 @@ src
 
 ---
 
-## Kafka Flow
+## Kafka Event Flow
 
 ```text
-Client Places Order
-        │
-        ▼
-Order Saved in MySQL
-        │
-        ▼
-Kafka Producer Publishes Event
-        │
-        ▼
-Kafka Topic (order-topic)
-        │
-        ▼
-Kafka Consumer Receives Event
-        │
-        ▼
-Logs Order Created Event
+Create Order
+     │
+     ▼
+Save Order
+     │
+     ▼
+Publish Event to Kafka
+     │
+     ▼
+Kafka Consumer
+     │
+     ▼
+Process Order Event
 ```
 
 ---
